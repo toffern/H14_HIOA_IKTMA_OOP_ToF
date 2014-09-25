@@ -12,10 +12,8 @@ public class Oppgave13_minstetal
        int førstetall;          // første tall som skal sammenliknes
        int andretall;          // andre tall som skal sammenliknes
 
-       førsteSifferstreng =
-               JOptionPane.showInputDialog( "Skriv første heltall:" );
-       andreSifferstreng =
-          JOptionPane.showInputDialog( "Skriv andre heltall:" );
+       førsteSifferstreng = JOptionPane.showInputDialog( "Skriv første heltall:" );
+       andreSifferstreng = JOptionPane.showInputDialog( "Skriv andre heltall:" );
 
        // konverterer sifferstrenger til heltallsverdier
        førstetall = Integer.parseInt( førsteSifferstreng );

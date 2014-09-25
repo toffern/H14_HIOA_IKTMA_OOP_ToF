@@ -9,8 +9,7 @@ public class Oppgave14_deleligMedTre
        String resultat;        // tekststreng som brukes til utskrift
 
        int førstetall;          // første tall som skal sammenliknes
-       førsteSifferstreng =
-               JOptionPane.showInputDialog( "Skriv første heltall:" );
+       førsteSifferstreng = JOptionPane.showInputDialog( "Skriv første heltall:" );
 
        // konverterer sifferstrenger til heltallsverdier
        førstetall = Integer.parseInt( førsteSifferstreng );
@@ -18,9 +17,8 @@ public class Oppgave14_deleligMedTre
        // initialiserer utskriftsstrengen til en tom streng
        resultat = "";
 
-		if ( (førstetall%3)==0 )
-          resultat = førstetall + " er delelig med 3";
-
+		if ( (førstetall%3)==0 )  resultat = førstetall + " er delelig med 3";
+		else resultat = førstetall + " er IKKJE delelig med 3";
        // Viser resultat av sammenlikningene
        JOptionPane.showMessageDialog( null, resultat, "Sammenlikningsresultater",
           JOptionPane.INFORMATION_MESSAGE );

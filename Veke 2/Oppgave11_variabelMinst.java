@@ -8,7 +8,7 @@ public class Oppgave11_verdiminst
 	 	int m = 3;
 		int n = -7;
  		int p = 2;
-		int minst = m;
+		int minst = m; // Gir minst verdien 3.
   		if ( n < minst )
 			minst = n;    	// Blir utført, fordi -7 er mindre enn 3.
  		if ( p < minst )

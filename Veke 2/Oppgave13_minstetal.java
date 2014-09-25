@@ -12,10 +12,8 @@ public class Oppgave13_minstetal
        int førstetall;          // første tall som skal sammenliknes
        int andretall;          // andre tall som skal sammenliknes
 
-       førsteSifferstreng =
-               JOptionPane.showInputDialog( "Skriv første heltall:" );
-       andreSifferstreng =
-          JOptionPane.showInputDialog( "Skriv andre heltall:" );
+       førsteSifferstreng = JOptionPane.showInputDialog( "Skriv første heltall:" );
+       andreSifferstreng = JOptionPane.showInputDialog( "Skriv andre heltall:" );
 
        // konverterer sifferstrenger til heltallsverdier
        førstetall = Integer.parseInt( førsteSifferstreng );
@@ -23,18 +21,13 @@ public class Oppgave13_minstetal
 
        // initialiserer utskriftsstrengen til en tom streng
        resultat = "";
-
-		if ( førstetall == andretall )
-          resultat = førstetall + " er lik " + andretall;
-
-		if ( førstetall > andretall )
-          resultat = resultat + andretall;
-
-       if ( førstetall < andretall )
-          resultat = resultat + førstetall;
+		// Finn minste tall, om dei ikkje er like
+		     if ( førstetall == andretall )	resultat = førstetall + " er lik " + andretall;
+		else if ( førstetall >  andretall )	resultat = resultat + andretall+ " er minst";
+		else 								resultat = resultat + førstetall + " er minst";
 
        // Viser resultat av sammenlikningene
-       JOptionPane.showMessageDialog( null, resultat, "Sammenlikningsresultater",
-          JOptionPane.INFORMATION_MESSAGE );
+       JOptionPane.showMessageDialog(	null, resultat,
+       									"Sammenlikningsresultater", JOptionPane.INFORMATION_MESSAGE );
     } // slutt på main-metoden
  } // slutt på klassen Sammenlikning (oppgave13_minstetal)
