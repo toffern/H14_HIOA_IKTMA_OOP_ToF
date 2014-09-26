@@ -1,7 +1,7 @@
 import javax.swing.JOptionPane;
 import java.util.Calendar;
 
-public class Oppgave8_sekundtilHHMMSS
+public class Oppgave8_sekundtilHHMMSS_MODULUS
  {
    public static void main(String[] args)
    {
