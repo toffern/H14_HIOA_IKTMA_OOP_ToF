@@ -4,7 +4,6 @@ sammen med tallene selv, slik at du får en tabell tilsvarende det som er vist i 
 
 import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
-import java.text.NumberFormat;
 
 
 public class Veke5_Oppgave5_tabellMedPotensTal
