@@ -57,8 +57,8 @@ public class Veke5_Oppgave8_heltalMellom10og50_med_gjennomsnitt
 		// Try-Catch-en gir feilmelding dersom nokon ikkje skriv inn tal, men stoppar ikkje main frå å krasje. Må finne ut korleis ein skal "lande kontrollert".
 		try{ inputTalet = Integer.parseInt(JOptionPane.showInputDialog(s));
 		}catch(NumberFormatException e){
-			JOptionPane.showMessageDialog( null, "Det var vel eit tal eg spurte om?" );
-		}finally{  // Litt usikker på kva denne finally-gjer.
+			JOptionPane.showMessageDialog( null, "Det var vel eit tal eg spurte om?  Eg gir opp, kom tilbake seinare. " );
+		}finally{  // Litt usikker på kva denne finally-gjer. Til eventuelle sjåararar: proceed with caution!
 			return inputTalet;
 		}
 	} // slutt på heiltalInput-metoda
