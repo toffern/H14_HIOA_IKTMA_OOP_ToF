@@ -14,18 +14,18 @@ public class Veke5_Oppgave7_heltalMellom10og50_ENKLARE_versjon
     public static void main( String args[] )
     {
 		// Definer variablane for metoda.
-		Integer nedreGrense=10 , ovreGrense=50;
-		Integer inputTal, antalMellomGrensene=0;
+		int nedreGrense=10 , ovreGrense=50;
+		int inputTal, antalMellomGrensene=0;
 
 		// Lag textarea til å skriv ut innhald på.
 		JTextArea tabellen = new JTextArea();
 		tabellen.setText("Antal tal mellom "+nedreGrense+" og "+ovreGrense+": \n");
 
-		inputTal = Integer.parseInt(JOptionPane.showInputDialog("Hit me baby, one more tal"));
+		inputTal = Integer.parseInt( JOptionPane.showInputDialog("Hit me baby, one more tal") );
 
 		while(inputTal>0){
 			if(inputTal>nedreGrense && inputTal<ovreGrense)
-			antalMellomGrensene++;
+				antalMellomGrensene++;
 
 			inputTal = Integer.parseInt(JOptionPane.showInputDialog("One more tal?"));
 

@@ -20,7 +20,7 @@ public class Veke5_Oppgave6_100tilfeldigeTal
 		// Definer variablane for metoda.
 		Integer fra=0 , til=100;
 		// Set verdiane så høgt (eller lavt) dei kan gå, så loopen kan ta dei ned (eller opp)
-		Integer storste=fra, nestStorste=fra+1,minste=til,nestMinste=til-1;
+		Integer storste=fra, nestStorste=fra+1, minste=til, nestMinste=til-1;
 
 		JTextArea tabellen = new JTextArea();
 
@@ -34,10 +34,17 @@ public class Veke5_Oppgave6_100tilfeldigeTal
 			// For å skrive det ut, må det være string.
 			String rndTxt = Integer.toString(rnd);
 			tabellen.append( rndTxt + "\t");
+
 			// Sjekk om rnd-talet er det største, nest største, minste eller nest minste
-			if(rnd>storste) storste=rnd;
+			if(rnd>storste){
+					nestStorste = storste;
+					storste=rnd;
+			}
 			if(rnd>nestStorste && rnd<storste) nestStorste=rnd;
-			if(rnd<minste) minste=rnd;
+			if(rnd<minste){
+				nestMinste = minste;
+				minste=rnd;
+			}
 			if(rnd<nestMinste && rnd>minste) nestMinste=rnd;
 		}
 		// Legg til utskrift av tala størst->minst.

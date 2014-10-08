@@ -2,21 +2,35 @@
 Lag et program som beregner og skriver ut summen av alle hele tall mellom to grenser som brukeren skriver inn.
 Programmet skal starte med å lese inn nedre og øvre grense for summen.
 Dersom innlest øvre grense er mindre enn eller lik nedre grense, skal programmet skrive ut en melding til brukeren om dette og deretter avslutte.
-Ellers skal programmet beregne nevnte sum - nedre grense skal tas med i summen, men ikke øvre grense - og summen skal skrives ut.   */
+Ellers skal programmet beregne nevnte sum - nedre grense skal tas med i summen, men ikke øvre grense - og summen skal skrives ut.
+******
+I den nye versjonen skal innlesing av nedre og øvre grense foretas om igjen inntil det er lest inn en øvre grense som er minst like stor som nedre grense.
+*/
 
 import javax.swing.JOptionPane;
 
 
-public class Veke5_Oppgave4_sumAvHeiltalMellomToTal
+public class Veke5_Oppgave9_sumAvHeiltalMellomToTal_doWhileLoop_ENKLARE_versjon
 {
     public static void main( String args[] )
     {
 		// Definer variablane for metoda.
-		Integer inputMax=0,inputMin=0, sum=0;
+		int inputMax=0,inputMin=0, sum=0;
 		String inputTaletTXT="",melding="", reknestykket="";
 
-		inputMin = heiltalInput("Gi meg eit heiltal, som skal vere nedre grense");
-		inputMax = heiltalInput("Gi meg eit heiltal, som skal vere øvre grense");
+		inputMin = Integer.parseInt(JOptionPane.showInputDialog("Gi meg eit heiltal, som skal vere nedre grense"));
+		// Her kjem forskjellen i forhold til oppg.4, vi må loope input av øvregrense, inntil den er større enn nedregrense. Litt input-kontroll her altså.
+		int inputTeller=1;
+		String feilMld;
+		do{
+			inputMax = Integer.parseInt(JOptionPane.showInputDialog("Gi meg eit heiltal, som skal vere øvre grense"));
+			inputTeller++;
+			if(inputMax<=inputMin){
+				feilMld = (inputTeller>2) ? "Kremt, for "+inputTeller+"de gang, øvre grense må være større enn mindre grense" : "Du må velje eit større tal.";
+				heiltalInput(feilMld);
+				inputTeller++;
+			}
+		}while(inputMax<=inputMin);
 
 		for ( int i=inputMin; i<inputMax; i+=1){
 			sum+=i;
@@ -24,7 +38,7 @@ public class Veke5_Oppgave4_sumAvHeiltalMellomToTal
 			reknestykket += i;
 		}
 
-		JOptionPane.showMessageDialog( null, "Summen blir: "+sum+"\n Reknestykket blir: "+reknestykket );
+		JOptionPane.showMessageDialog( null, "Summen blir: "+sum+"\n Reknestykket blir: "+reknestykket + " (husk at øvre grense sjølv ikkje skal reknast med)");
 	} // slutt på main-metoden
 
 	// På tide å lage sin eigen metode, inspirert etter dagens oppgaveøkt.
